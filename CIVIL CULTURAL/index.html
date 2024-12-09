@@ -30,6 +30,7 @@
             display: flex;
             flex-direction: column; /* Stack label and text area vertically */
             align-items: center;   /* Center the label and text area */
+			margin-top: 20px;
         }
 		
 		.buttons {
@@ -37,14 +38,23 @@
 			display: flex;
 			flex-direction: row;
 			text-align: center;
-			margin: 0 auto;}
+			vertical-align: middle;
+			text-align: center;
+			margin: 0 auto;
+			
+			}
 
 		.action_btn {
 			width: 500px;
 			display: flex;
 			flex-direction: row;
 			text-align: center;
-			margin: 0 auto;}
+			vertical-align: middle;
+			text-align: center;
+			margin: 0 auto;
+			justify-content: center;
+			
+			}
         
 		label {
             margin-bottom: 10px;
@@ -66,6 +76,32 @@
             border-color: #007BFF;
             box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
         }
+		
+		#clockButton {
+			/*padding: 0px;
+			font-size: 1.5rem;
+			background-color: #007BFF;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 200px;
+			height: 100px;*/
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			transition: background-color 0.3s;
+		}
+
+		#clockButton:hover {
+			background-color: #0056b3;
+		}
+
+		#clock {
+			font-size: 1.2rem;
+		}
+		
     </style>
 </head>
 <body>
@@ -73,9 +109,13 @@
 	
 	<div class="buttons">
             <div class="action_btn">
-            <button name="submit" class="action_btn Articles" type="submit" value="Articles" onclick="myFunction()">Articles</button>
-            <button name="submit" class="action_btn News" type="submit" value="News" onclick="myFunction2()">News</button>
-            <p id="saved"></p>
+            <button id="clockButton">
+			<span id="clock">--:--:--</span>
+			</button>
+            <button name="submit" class="action_btn News" type="submit" value="choose" onclick="myFunction2()">Choose</button>
+            <button name="submit" class="action_btn Topic" type="submit" value="Topic" onclick="myFunction2()">Topic</button>
+
+			<p id="saved"></p>
             </div>
         </div>
 
@@ -104,5 +144,6 @@
             <textarea id="textarea3" style="min-width:300px"; max-width="100%"; rows="20" placeholder="Text Area 3"></textarea>
         </div>
     </div>
+	 <script src="script.js"></script>
 </body>
 </html>
